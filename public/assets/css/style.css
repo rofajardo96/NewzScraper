@@ -56,6 +56,7 @@ body {
 
   .panel-body{
       background-color: lightslategray;
+      font-family: American Typewriter, serif;
   }
 
   a{
@@ -89,8 +90,25 @@ body {
 
   .n-primary{
     background-color: lightblue;
+    /* font-family: Brush Script MT, Brush Script Std, cursive; */
   }
 /* 
   .navbar-nav{
     opacity: 1;
   } */
+
+  .letter{
+    font-family: Brush Script MT, Brush Script Std, cursive;
+  }
+
+  h4{
+    font-family: American Typewriter, serif;
+  }
+
+  h1{
+    font-family: Brush Script MT, Brush Script Std, cursive; 
+  }
+
+  .btn{
+    font-weight: 500;
+  }
