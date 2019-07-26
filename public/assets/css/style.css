@@ -21,8 +21,8 @@ body {
 }
 
 .ml14 {
-    font-weight: 200;
-    font-size: 3.2em;
+    font-weight: 420;
+    font-size: 3em;
   }
   
   .ml14 .text-wrapper {
@@ -49,8 +49,9 @@ body {
     line-height: 1em;
   }
 
-  .btn-success{
-      background-color: purple;
+  .btn{
+      color: black;
+      background-color: lightblue;
   }
 
   .panel-body{
@@ -72,3 +73,24 @@ body {
     text-emphasis-style: strong;
     font-size: 18px;   
   }
+
+  .fa-newspaper{
+    font-size: 28px;
+    color: darkcyan;
+  }
+
+  .jumbotron{
+    opacity: .35;
+  }
+
+  .navbar-fixed-top{
+    background-color: transparent;
+  }
+
+  .n-primary{
+    background-color: lightblue;
+  }
+/* 
+  .navbar-nav{
+    opacity: 1;
+  } */
