@@ -38,7 +38,7 @@ $(".delete").on("click", function() {
 });
 
 //Handle Save Note button
-$(".saveNote").on("click", function() {
+$(".saveComment").on("click", function() {
     var thisId = $(this).attr("data-id");
     if (!$("#noteText" + thisId).val()) {
         alert("please enter a note to save")
@@ -54,7 +54,7 @@ $(".saveNote").on("click", function() {
               console.log(data);
               // Empty the notes section
               $("#noteText" + thisId).val("");
-              $(".modalNote").modal("hide");
+              $(".modalComment").modal("hide");
               window.location = "/saved"
           });
     }
@@ -69,7 +69,38 @@ $(".deleteNote").on("click", function() {
         url: "/notes/delete/" + noteId + "/" + articleId
     }).done(function(data) {
         console.log(data)
-        $(".modalNote").modal("hide");
+        $(".modalComment").modal("hide");
         window.location = "/saved"
     })
 });
+
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml14 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.ml14 .line',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeInOutExpo",
+    duration: 900
+  }).add({
+    targets: '.ml14 .letter',
+    opacity: [0,1],
+    translateX: [40,0],
+    translateZ: 0,
+    scaleX: [0.3, 1],
+    easing: "easeOutExpo",
+    duration: 800,
+    offset: '-=600',
+    delay: function(el, i) {
+      return 150 + 25 * i;
+    }
+  }).add({
+    targets: '.ml14',
+    // opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
