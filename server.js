@@ -44,13 +44,11 @@ app.set("view engine", "handlebars");
 // mongoose.connect("mongodb://heroku_jxttvdfg:ihitedq29n0jfd3ssu3u7mbrd@ds115071.mlab.com:15071/heroku_jxttvdfg");
 //mongoose.connect("mongodb://localhost/mongoscraper");
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://headLines:boberto9@ds115071.mlab.com:15071/heroku_jxttvdfg",
-{
-  useMongoClient: true
-}
+  process.env.MONGODB_URI
+
 );
 
-mongoose.connect(MONGODB_URI);
+// mongoose.connect(MONGODB_URI);
 
 
 var db = mongoose.connection;
