@@ -14,7 +14,7 @@ var request = require("request");
 var cheerio = require("cheerio");
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
-mongoose.Promise = Promise;
+mongoose.Promise = global.Promise;
 
 //Define port
 var port = process.env.PORT || 3030
@@ -43,7 +43,12 @@ app.set("view engine", "handlebars");
 // Database configuration with mongoose
 // mongoose.connect("mongodb://heroku_jxttvdfg:ihitedq29n0jfd3ssu3u7mbrd@ds115071.mlab.com:15071/heroku_jxttvdfg");
 //mongoose.connect("mongodb://localhost/mongoscraper");
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://headLines:boberto9@ds115071.mlab.com:15071/heroku_jxttvdfg";
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://headLines:boberto9@ds115071.mlab.com:15071/heroku_jxttvdfg",
+{
+  useMongoClient: true
+}
+);
 
 mongoose.connect(MONGODB_URI);
 
